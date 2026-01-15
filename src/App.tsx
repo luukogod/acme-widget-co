@@ -70,42 +70,44 @@ function App() {
   );
  
   return (
-    <div>
-      <header>
-        <div>
-          <h1>
-               Acme Widget Co
+    <div className="app">
+      <header className="app-header">
+        <div className="container">
+          <h1 className="app-title">
+            Acme Widget Co
           </h1>
         </div>
       </header>
 
-      <main>
-        <section>
-          <h2>Products</h2>
-          <div>
+      <main className="app-main container">
+        <section className="products-section">
+          <h2 className="section-title">Products</h2>
+          <div className="products-grid">
             {productList.map((product) => (
-                <ProductCard
-                  key={product.code}
-                  product={product}
-                  onAddToBasket={handleAddProduct}
-                />
-              ))}
+              <ProductCard
+                key={product.code}
+                product={product}
+                onAddToBasket={handleAddProduct}
+              />
+            ))}
           </div>          
         </section>
 
-        <aside>
-        <BasketDisplay
-          items={basketData.items}
-          breakdown={basketData.breakdown}
-          onRemoveProduct={handleRemoveProduct}
-          onClearBasket={handleClearBasket}
-          onAddProduct={handleAddProduct}
-        />
+        <aside className="basket-section">
+          <BasketDisplay
+            items={basketData.items}
+            breakdown={basketData.breakdown}
+            onRemoveProduct={handleRemoveProduct}
+            onClearBasket={handleClearBasket}
+            onAddProduct={handleAddProduct}
+          />
         </aside>
       </main>
 
-      <footer>
-        <p>Aceme widget co. 2026, made with ❤️ by Kan Chan for coding assesments</p>
+      <footer className="app-footer">
+        <div className="container">
+          <p>Acme Widget Co. 2026, made with ❤️ by Kan Chan for coding assessments</p>
+        </div>
       </footer>
     </div>
   );
